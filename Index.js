@@ -29,7 +29,7 @@ app.get('/' , (req,res) => {
     res.status(200).send("i m in");
 });
 
-const PORT=4000;
+const PORT=process.env.PORT||4001;
 dbConnect();
 app.listen(PORT,()=>{
     console.log(`listeing to port ${PORT}`)
