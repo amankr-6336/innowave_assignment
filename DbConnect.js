@@ -8,11 +8,7 @@ module.exports=async()=>{
     const mongoUri=`mongodb+srv://amanhost18:Callofduty@cluster0.ueu6ft7.mongodb.net/?retryWrites=true&w=majority`
 
     try {
-        const connect=await mongoose.connect(mongoUri, {serverApi: {
-            version: ServerApiVersion.v1,
-            strict: true,
-            deprecationErrors: true,
-          }})
+        const connect=await mongoose.connect(mongoUri, { useNewUrlParser: true, useUnifiedTopology: true })
 
           console.log(`mongodb Connection: ${connect.connection.host}`)
     } catch (error) {
